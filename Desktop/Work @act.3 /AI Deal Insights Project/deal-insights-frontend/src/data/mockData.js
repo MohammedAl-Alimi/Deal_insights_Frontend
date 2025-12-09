@@ -9,6 +9,10 @@ export const mockProjects = [
     industry: 'Technology',
     year: 2024,
     status: 'Won',
+    productOwner: {
+      name: 'Amelia Chen',
+      email: 'amelia.chen@techcorp.com'
+    },
     objectives: 'Modernize legacy systems and migrate to cloud infrastructure to improve operational efficiency by 40%',
     strategies: ['Cloud Migration', 'Agile Adoption', 'Change Management'],
     keyOutcomes: '35% reduction in operational costs, 50% faster deployment cycles',
@@ -26,6 +30,10 @@ export const mockProjects = [
     industry: 'Finance',
     year: 2024,
     status: 'Won',
+    productOwner: {
+      name: 'Carlos Alvarez',
+      email: 'carlos.alvarez@globalbank.com'
+    },
     objectives: 'Enhance digital banking experience and increase customer satisfaction scores by 25%',
     strategies: ['UX Research', 'Mobile-First Design', 'A/B Testing'],
     keyOutcomes: 'NPS increased by 32 points, 60% increase in mobile app engagement',
@@ -43,6 +51,10 @@ export const mockProjects = [
     industry: 'Retail',
     year: 2023,
     status: 'Won',
+    productOwner: {
+      name: 'Riley Thompson',
+      email: 'riley.thompson@retailco.com'
+    },
     objectives: 'Integrate online and offline channels to create seamless shopping experience',
     strategies: ['Channel Integration', 'Inventory Optimization', 'Analytics'],
     keyOutcomes: '45% increase in online sales, improved inventory turnover by 28%',
@@ -60,6 +72,10 @@ export const mockProjects = [
     industry: 'Healthcare',
     year: 2023,
     status: 'Won',
+    productOwner: {
+      name: 'Dr. Priya Nair',
+      email: 'priya.nair@healthplus.com'
+    },
     objectives: 'Implement telemedicine platform to increase patient access by 50%',
     strategies: ['Platform Development', 'Regulatory Compliance', 'Patient Engagement'],
     keyOutcomes: '65% increase in patient reach, 4.8/5 patient satisfaction rating',
@@ -77,6 +93,10 @@ export const mockProjects = [
     industry: 'Technology',
     year: 2023,
     status: 'Won',
+    productOwner: {
+      name: 'Leo Martins',
+      email: 'leo.martins@autodrive.com'
+    },
     objectives: 'Launch AI-powered driver assistance features with 99.9% reliability',
     strategies: ['ML Engineering', 'Safety Testing', 'Partner Integration'],
     keyOutcomes: 'Successful launch in 3 markets, zero critical incidents',
@@ -94,6 +114,10 @@ export const mockProjects = [
     industry: 'Technology',
     year: 2023,
     status: 'Won',
+    productOwner: {
+      name: 'Sophia Zhang',
+      email: 'sophia.zhang@ecoenergy.com'
+    },
     objectives: 'Build renewable energy management platform for smart grid optimization',
     strategies: ['IoT Integration', 'Data Analytics', 'Sustainability Strategy'],
     keyOutcomes: '28% energy efficiency improvement, $2M cost savings',
@@ -111,6 +135,10 @@ export const mockProjects = [
     industry: 'Retail',
     year: 2024,
     status: 'Lost',
+    productOwner: {
+      name: 'Nina Patel',
+      email: 'nina.patel@fashionforward.com'
+    },
     objectives: 'Create personalized shopping experience using AI recommendations',
     strategies: ['Recommendation Engine', 'Personalization', 'Mobile Commerce'],
     keyOutcomes: 'Project not secured - budget constraints',
@@ -124,6 +152,10 @@ export const mockProjects = [
     industry: 'Finance',
     year: 2023,
     status: 'Won',
+    productOwner: {
+      name: 'Ethan Walker',
+      email: 'ethan.walker@datastream.com'
+    },
     objectives: 'Develop real-time fraud detection system with 99% accuracy',
     strategies: ['Machine Learning', 'Real-time Processing', 'Risk Management'],
     keyOutcomes: '99.2% fraud detection accuracy, 40% reduction in false positives',

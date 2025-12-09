@@ -53,6 +53,24 @@ const ProjectDetailModal = ({ project, onClose }) => {
                   {project.status}
                 </span>
               </div>
+              {project.productOwner && (
+                <div className="mt-2">
+                  <p className="text-sm text-gray-600 dark:text-gray-300">
+                    Project Owner: <span className="font-semibold text-gray-900 dark:text-white">{project.productOwner.name}</span>
+                    {project.productOwner.email && (
+                      <span className="text-gray-500 dark:text-gray-400"> • </span>
+                    )}
+                    {project.productOwner.email && (
+                      <a
+                        href={`mailto:${project.productOwner.email}`}
+                        className="text-primary hover:underline transition-colors duration-200"
+                      >
+                        {project.productOwner.email}
+                      </a>
+                    )}
+                  </p>
+                </div>
+              )}
             </div>
           </div>
           <button

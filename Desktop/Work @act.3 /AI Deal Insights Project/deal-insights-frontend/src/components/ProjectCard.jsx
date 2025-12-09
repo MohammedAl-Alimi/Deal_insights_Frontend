@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExternalLink, Target, Lightbulb, TrendingUp } from 'lucide-react';
+import { ExternalLink, Target, Lightbulb, TrendingUp, Mail } from 'lucide-react';
 
 const ProjectCard = ({ project, onClick }) => {
   const statusColors = {
@@ -36,6 +36,23 @@ const ProjectCard = ({ project, onClick }) => {
               </span>
               <span className="text-xs text-gray-500 dark:text-gray-400">{project.year}</span>
             </div>
+            {project.productOwner && (
+              <div className="mt-1 flex items-center gap-1.5">
+                <p className="text-xs text-gray-500 dark:text-gray-400">
+                  PO: <span className="font-medium text-gray-700 dark:text-gray-200">{project.productOwner.name}</span>
+                </p>
+                {project.productOwner.email && (
+                  <a
+                    href={`mailto:${project.productOwner.email}`}
+                    onClick={(e) => e.stopPropagation()}
+                    className="text-gray-400 hover:text-primary transition-colors duration-200"
+                    title={project.productOwner.email}
+                  >
+                    <Mail className="w-3 h-3" />
+                  </a>
+                )}
+              </div>
+            )}
           </div>
         </div>
         <div className="flex items-center gap-2">

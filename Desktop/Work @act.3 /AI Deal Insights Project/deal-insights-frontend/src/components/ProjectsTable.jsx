@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import { ChevronDown, ChevronUp, Mail } from 'lucide-react';
 
 const ProjectsTable = ({ projects, onProjectClick }) => {
   const [expandedRows, setExpandedRows] = useState(new Set());
@@ -48,6 +48,9 @@ const ProjectsTable = ({ projects, onProjectClick }) => {
                   Status
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                  PO
+                </th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                   Objectives
                 </th>
                 <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
@@ -90,6 +93,25 @@ const ProjectsTable = ({ projects, onProjectClick }) => {
                         {project.status}
                       </span>
                     </td>
+                    <td className="px-6 py-4 whitespace-nowrap">
+                      {project.productOwner ? (
+                        <div className="flex items-center gap-2">
+                          <span className="text-sm text-gray-700 dark:text-gray-300">{project.productOwner.name}</span>
+                          {project.productOwner.email && (
+                            <a
+                              href={`mailto:${project.productOwner.email}`}
+                              onClick={(e) => e.stopPropagation()}
+                              className="text-gray-400 hover:text-primary transition-colors duration-200"
+                              title={project.productOwner.email}
+                            >
+                              <Mail className="w-4 h-4" />
+                            </a>
+                          )}
+                        </div>
+                      ) : (
+                        <span className="text-sm text-gray-400">—</span>
+                      )}
+                    </td>
                     <td className="px-6 py-4">
                       <div className="text-sm text-gray-900 dark:text-white max-w-md truncate">
                         {project.objectives}
@@ -114,8 +136,29 @@ const ProjectsTable = ({ projects, onProjectClick }) => {
                   </tr>
                   {expandedRows.has(project.id) && (
                     <tr>
-                      <td colSpan="6" className="px-6 py-4 bg-gray-50 dark:bg-gray-700/30">
+                      <td colSpan="7" className="px-6 py-4 bg-gray-50 dark:bg-gray-700/30">
                         <div className="space-y-4">
+                          {project.productOwner && (
+                            <div>
+                              <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1">
+                                Product Owner
+                              </h4>
+                              <div className="flex items-center gap-2">
+                                <p className="text-sm text-gray-600 dark:text-gray-400">
+                                  {project.productOwner.name}
+                                </p>
+                                {project.productOwner.email && (
+                                  <a
+                                    href={`mailto:${project.productOwner.email}`}
+                                    className="text-gray-400 hover:text-primary transition-colors duration-200"
+                                    title={project.productOwner.email}
+                                  >
+                                    <Mail className="w-4 h-4" />
+                                  </a>
+                                )}
+                              </div>
+                            </div>
+                          )}
                           <div>
                             <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                               Objectives
